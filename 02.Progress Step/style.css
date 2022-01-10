@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap'); */
+
+*{
+    box-sizing: border-box;  
+}
+:root{
+    --line-border-fill:aqua;
+    --line-border-empty:#e0e0e0;
+}
+body{
+    background-color: #f6f7fb;
+    font-family: 'Muli',sans-serif;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    justify-content:center ;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    text-align: center;
+}
+.progressContainer{
+    display: flex;
+    justify-content: space-between;
+    position:relative;
+    margin-bottom: 2.5em;
+    width:24em;
+    max-width: 100%;
+    
+}
+.progress{
+    position: absolute;
+    width:24em;
+    height: .25em;
+    background-color: var(--line-border-fill);
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    width:24em;
+    max-width:0%;
+    z-index: -1;
+    transition: .4s ease ;
+}
+.progressContainer::before{
+    content:'';
+    position: absolute;
+    width:24em;
+    height: .25em;
+    background-color: var(--line-border-empty);
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    max-width:100%;
+    z-index: -1;
+}
+.circle{
+    background-color: #fff;
+    color:#999;
+    border-radius: 50%;
+    height:30px;
+    height:1.8em;
+    width:1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid  var(--line-border-empty);
+    transition: .4s ease;
+}
+.circle.active{
+    border-color:  var(--line-border-fill);
+    
+    transition: .7s ease .4S;
+}
+.btn{
+   background-color: var(--line-border-fill);
+   color:black;
+   border:0;
+   border-radius: 5px;
+   padding:8px 30px;
+   margin:5x;
+   font-size: 14px;
+   cursor:pointer;
+}
+.btn:hover{
+    transform:scale(0.98);
+}
+.btn:disabled{
+    background-color: var(--line-border-empty);
+}
