@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Spline+Sans&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --clr-dark:rgb(10, 77, 110);
+  --clr-light:#fff;
+  --clr-accent:rgb(222,52,0);
+  --clr-accent-dark:rgb(163,38,0);
+  --clr-secondary:rgb(0,62,163);
+  --br:.2em;
+}
+
+body {
+  font-family: 'Roboto',sans-serif;
+  display: -ms-grid;
+  display: grid;
+  margin: 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.game {
+  position: relative;
+  width: 12.5em;
+  height: 21em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.streamers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+
+.streamers img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 1px solid var(--clr-dark);
+}
+
+.streamers img:nth-of-type(1) {
+  -webkit-transform: translateX(70%);
+          transform: translateX(70%);
+  z-index: 1;
+}
+
+.streamers img:nth-of-type(2) {
+  -webkit-transform: translateX(40%);
+          transform: translateX(40%);
+  z-index: 0;
+}
+
+.front .name {
+  font-size: 1.5em;
+}
+
+.front .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.front .thumbnail {
+  max-width: 100%;
+  height: 130%;
+  margin: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--br);
+}
+
+.rank {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  right: 1em;
+  background-color: #c01919;
+  padding: .5em .5em .75em;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 48% 65%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 100%, 48% 65%, 0 100%, 0 0);
+  z-index: 5;
+  -webkit-transition: scale 250ms ease-in-out,-webkit-transform 250ms  ease-in-out;
+  transition: scale 250ms ease-in-out,-webkit-transform 250ms  ease-in-out;
+  transition: transform 250ms  ease-in-out,scale 250ms ease-in-out;
+  transition: transform 250ms  ease-in-out,scale 250ms ease-in-out,-webkit-transform 250ms  ease-in-out;
+}
+
+.background {
+  background-color: #232b36;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: var(--br);
+  -webkit-transform: translateY(-35) scale(0.2, 0.3);
+          transform: translateY(-35) scale(0.2, 0.3);
+  opacity: 0;
+  overflow: hidden;
+}
+
+.back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  gap: 1em;
+}
+
+.back .streaming-info {
+  -webkit-columns: 2;
+          columns: 2;
+  -webkit-column-rule: 1px solid rgba(178, 34, 34, 0.5);
+          column-rule: 1px solid rgba(178, 34, 34, 0.5);
+}
+
+.back .streamer {
+  font-size: small;
+}
+
+.back .streamer .name {
+  font-weight: bold;
+}
+
+.back .streamer .number {
+  text-align: center;
+}
+
+.back .game-stat {
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.back .game-stat span {
+  font-size: .85rem;
+  display: block;
+}
+
+.back .btn {
+  cursor: pointer;
+  border: 0;
+  background-color: #d84949;
+  color: var(--clr-light);
+  border-radius: 100vw;
+  padding: .5em  1.5em;
+  font-weight: bold;
+}
+
+.front {
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.game:hover .rank {
+  -webkit-transform: translate(-50%, -165%) scale(0.9);
+          transform: translate(-50%, -165%) scale(0.9);
+}
+
+.game:hover .front {
+  -webkit-transform: translateY(-45%) scale(0.8);
+          transform: translateY(-45%) scale(0.8);
+}
+
+.game:hover .front .stats {
+  opacity: 0;
+}
+
+.game:hover .front .name {
+  -webkit-animation: game-name 250ms forwards;
+          animation: game-name 250ms forwards;
+}
+
+.game:hover .back {
+  opacity: 1;
+}
+
+.game:hover .background {
+  opacity: 1;
+  -webkit-transform: translateY(0) scale(1.3, 1.2);
+          transform: translateY(0) scale(1.3, 1.2);
+  -webkit-transition: opacity 100ms linear 0.1s, -webkit-transform 200ms cubic-bezier(0.43, 0.85, 0.74, 1) 0.1s;
+  transition: opacity 100ms linear 0.1s, -webkit-transform 200ms cubic-bezier(0.43, 0.85, 0.74, 1) 0.1s;
+  transition: transform 200ms cubic-bezier(0.43, 0.85, 0.74, 1) 0.1s, opacity 100ms linear 0.1s;
+  transition: transform 200ms cubic-bezier(0.43, 0.85, 0.74, 1) 0.1s, opacity 100ms linear 0.1s, -webkit-transform 200ms cubic-bezier(0.43, 0.85, 0.74, 1) 0.1s;
+}
+
+@-webkit-keyframes game-name {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+  50% {
+    text-align: center;
+    opacity: 0;
+  }
+  100% {
+    text-align: center;
+    opacity: 1;
+  }
+}
+
+@keyframes game-name {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+  50% {
+    text-align: center;
+    opacity: 0;
+  }
+  100% {
+    text-align: center;
+    opacity: 1;
+  }
+}
+
+.wave {
+  color: #170344;
+  position: absolute;
+  top: 3em;
+  left: 0;
+  width: 300%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: wave 5s linear infinite;
+          animation: wave 5s linear infinite;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-67%);
+            transform: translateX(-67%);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-67%);
+            transform: translateX(-67%);
+  }
+}
+/*# sourceMappingURL=style.css.map */
