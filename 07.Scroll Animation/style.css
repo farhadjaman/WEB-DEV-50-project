@@ -1,0 +1,116 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Spline+Sans&display=swap'); */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --box-bg:#22aeefce;
+  --box-top:#00b7ff;
+}
+
+body {
+  font-family: 'Roboto',sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: var(--box-bg);
+  outline: 2px solid var(--box-bg);
+  padding: 4px 10px;
+}
+
+.box {
+  background-color: var(--box-bg);
+  overflow: hidden;
+  position: relative;
+  color: azure;
+  fill: var(--box-top);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateX(400%);
+          transform: translateX(400%);
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+}
+
+.box:nth-of-type(even) {
+  -webkit-transform: translateX(-400%);
+          transform: translateX(-400%);
+}
+
+.box.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.box > h2 {
+  font-size: 40px;
+}
+
+.wave {
+  position: absolute;
+  top: 3em;
+  left: 0;
+  width: 300%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -10;
+  -webkit-animation: wave 5s linear infinite;
+          animation: wave 5s linear infinite;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-67%);
+            transform: translateX(-67%);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-67%);
+            transform: translateX(-67%);
+  }
+}
+/*# sourceMappingURL=style.css.map */

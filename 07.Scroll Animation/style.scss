@@ -1,0 +1,77 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Spline+Sans&display=swap'); */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    
+}
+:root{
+    --box-bg:#22aeefce;
+    --box-top:#00b7ff;
+    
+}
+body{
+    font-family: 'Roboto',sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    background-color:rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+h1{
+    color: var(--box-bg);
+    outline: 2px solid var(--box-bg);
+    padding: 4px 10px;
+    
+}
+.box{
+    background-color: var(--box-bg);
+    overflow: hidden;
+    position: relative;
+    color: azure;
+    fill: var(--box-top);
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    width: 400px;
+    height: 200px;
+    margin:10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,.3);
+    transform: translateX(400%);
+    transition:transform 400ms ease-in-out;
+    
+    &:nth-of-type(even)
+    {
+        transform: translateX(-400%);
+    }
+    &.show
+    {
+        transform: translateX(0);
+    }
+    &>h2{
+        font-size: 40px;
+    }
+}
+.wave{
+    position: absolute;
+    top:3em;
+    left:0;
+    width: 300%;
+    object-fit: cover;
+    z-index: -10;
+    animation: wave 5s linear infinite;
+  
+}
+ 
+@keyframes wave {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-67%);
+    }
+}
