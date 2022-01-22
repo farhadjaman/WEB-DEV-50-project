@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto',sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: steelblue;
+  color: white;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.container a {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.container .form-control {
+  position: relative;
+  margin: 20px 0px 40px;
+  width: 300px;
+}
+
+.container .form-control input {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  display: block;
+  width: 100%;
+  padding: 15x 0;
+  outline: none;
+  font-size: 18px;
+  color: white;
+  z-index: 100;
+}
+
+.container .form-control input:focus, .container .form-control input:valid {
+  outline: 0;
+  border-bottom: 2px solid lightblue;
+}
+
+.container .form-control label {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 1;
+}
+
+.container .form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.64, 1.45, 0.85, 1.23);
+  transition: -webkit-transform 200ms cubic-bezier(0.64, 1.45, 0.85, 1.23);
+  transition: transform 200ms cubic-bezier(0.64, 1.45, 0.85, 1.23);
+  transition: transform 200ms cubic-bezier(0.64, 1.45, 0.85, 1.23), -webkit-transform 200ms cubic-bezier(0.64, 1.45, 0.85, 1.23);
+}
+
+.container .form-control input:focus + label span,
+.container .form-control input:valid + label span {
+  color: lightblue;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.container .btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: lightblue;
+  outline: none;
+  padding: 10px;
+  font-size: 1em;
+  border: 0;
+  border-radius: 3px;
+}
+
+.container .btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.container .text {
+  margin-top: 30px;
+}
+/*# sourceMappingURL=style.css.map */
