@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Muli';
+    background-color: #e0e0e0;
+}
+h1{
+    transform: translateX(15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 30px;
+    text-align: center;
+    background-color: #2ecc71;
+    border-radius:5px;
+    height:4rem;
+    width: 80%;
+}
+.faq{
+    background-color: transparent;
+    border:1px solid #646262;
+    border-radius: 10px;
+    margin:20px 0;
+    padding:13px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s ease;
+    height:100px;
+    &.active{
+        height:150px;
+        background-color: white;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1),
+        0 6px 3px rgba(0,0,0,0.1);
+        &::before, &::after{
+             content: '\f075';
+             font-family: 'Font Awesome 5 Free';
+             color: #2ecc71;
+             font-size: 7rem;
+             position: absolute;
+             opacity: 0.2;
+             top:20px;
+             left: 20px;
+             z-index:0;
+
+        }
+        &::before{
+            color:#3498db;
+            top:-10px;
+            left:-30px;
+            transform: rotateY(180deg);
+        }
+    }
+    &_text{
+        display:none;
+    }
+    &.active{
+        .faq_text{
+        display:block;
+        }
+    }
+    &_btn{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background-color:transparent;
+         border: 0;
+         cursor: pointer;
+         font-size:1rem;
+         color: #fd745c;
+         padding:0;
+         position: absolute;
+         top:30px;
+         right:30px;
+         height:30px;
+         width:30px;
+         i{
+             margin-right:10px;
+         }
+         .fa-times{
+             display: none;
+         }
+         &:focus{
+             outline:0;
+         }
+          
+    }
+    &.active{
+        .faq_btn .fa-times{
+            display:block;
+        }
+        .faq_btn .fa-chevron-down{
+            display:none;
+        }
+        
+    }
+
+}
