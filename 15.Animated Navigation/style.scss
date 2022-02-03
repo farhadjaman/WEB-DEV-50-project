@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+@mixin transition-width_op {
+    transition:width 700ms linear,opacity 700ms linear ;
+}
+@mixin transition-transform {
+    transition:transform 700ms linear;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    
+}
+body{
+    background-image: linear-gradient(to bottom,#eafbff 0%,#eafbff 50%,#5290f9 50%,#5290f9 100%);
+    font-family: 'Muli',sans-serif;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    justify-content:center ;
+    height: 100vh;
+    margin:0;
+}
+.nav{
+    background-color: #fff;
+     display: flex;
+    align-items: center;
+    justify-content:center ;
+    overflow: hidden;
+    height:80px;
+    width:80px;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(black,0.1);
+    @include transition-width_op;
+   
+    & ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        width:0;
+        opacity:0;
+        @include transition-width_op;
+        li{
+            margin-right:10px;
+            a{
+            position: relative;
+            color: black;
+            text-decoration: none;
+            }
+        }
+    }
+    & .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:0;
+        padding:0;
+        margin:0;
+        width:50px;
+        height:50px;
+        background:transparent;
+        position: relative;
+        cursor:pointer;
+        @include transition-transform;
+        .line{
+            background-color: #5290f9;
+            position: absolute;
+            height:2px;
+            width:25px; 
+            border-radius:3px ;
+            transform:rotateY(0deg) translate(0);
+            @include transition-transform;
+            &.line2{
+                top:29px;
+          }
+         
+
+        } 
+    }
+    &.active{
+         width:340px;
+         ul{
+            width:70%;
+            opacity:1;
+            }
+        .icon{ 
+        .line{
+            }
+        .line1{
+            transform:rotate(-765deg) translateY(3px);
+            }
+        .line2{
+            transform:rotate(765deg) translateY(-4px);
+            }
+                 }
+        
+    }
+
+}
